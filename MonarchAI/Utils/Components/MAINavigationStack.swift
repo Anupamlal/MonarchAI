@@ -12,13 +12,19 @@ struct MAINavigationStack<Root:View> : View {
     
     var sourceView: Root
     var navigationTitle: String
+    var navigationBarBackgroundEnable: Bool = false
     
     @Environment(\.dismiss) private var dismiss
     
     init(sourceView: Root, navigationTitle: String) {
         self.sourceView = sourceView
         self.navigationTitle = navigationTitle
-        UINavigationBar.appearance().shadowImage = UIImage()
+    }
+    
+    init(sourceView: Root, navigationTitle: String, navigationBarBackgroundEnable: Bool) {
+        self.sourceView = sourceView
+        self.navigationTitle = navigationTitle
+        self.navigationBarBackgroundEnable = navigationBarBackgroundEnable
     }
     
     var body: some View {
@@ -26,7 +32,7 @@ struct MAINavigationStack<Root:View> : View {
             sourceView
         }
         .toolbarBackground(Color.white, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(navigationBarBackgroundEnable ? .visible : .hidden, for: .navigationBar)
         .background(Color.white)
         .navigationTitle(Text(navigationTitle))
         .navigationBarTitleDisplayMode(.inline)

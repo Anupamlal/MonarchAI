@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902C71522BF118760023D93C /* ParentAccountSetupFinalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */; };
 		906904372BEE84F3008DF1C2 /* MonarchAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904362BEE84F3008DF1C2 /* MonarchAIApp.swift */; };
 		9069043B2BEE84F6008DF1C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9069043A2BEE84F6008DF1C2 /* Assets.xcassets */; };
 		9069043E2BEE84F6008DF1C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9069043D2BEE84F6008DF1C2 /* Preview Assets.xcassets */; };
@@ -33,9 +34,11 @@
 		906904892BEFFB2E008DF1C2 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904882BEFFB2E008DF1C2 /* HomeScreenView.swift */; };
 		9069048C2BF00544008DF1C2 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069048B2BF00544008DF1C2 /* AppRootManager.swift */; };
 		9069048F2BF0A075008DF1C2 /* MAISocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069048E2BF0A075008DF1C2 /* MAISocialLoginButton.swift */; };
+		906904942BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAccountSetupFinalStepView.swift; sourceTree = "<group>"; };
 		906904332BEE84F3008DF1C2 /* MonarchAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonarchAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		906904362BEE84F3008DF1C2 /* MonarchAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonarchAIApp.swift; sourceTree = "<group>"; };
 		9069043A2BEE84F6008DF1C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		906904882BEFFB2E008DF1C2 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		9069048B2BF00544008DF1C2 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		9069048E2BF0A075008DF1C2 /* MAISocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAISocialLoginButton.swift; sourceTree = "<group>"; };
+		906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAccountSetupFirstStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		902C714F2BF118510023D93C /* ParentAccountSetupFinalStep */ = {
+			isa = PBXGroup;
+			children = (
+				902C71502BF118640023D93C /* View */,
+			);
+			path = ParentAccountSetupFinalStep;
+			sourceTree = "<group>";
+		};
+		902C71502BF118640023D93C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		902C71532BF134E50023D93C /* HomeScreens */ = {
+			isa = PBXGroup;
+			children = (
+				906904872BEFFB21008DF1C2 /* HomeScreen */,
+				902C71542BF135530023D93C /* AddChild */,
+			);
+			path = HomeScreens;
+			sourceTree = "<group>";
+		};
+		902C71542BF135530023D93C /* AddChild */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddChild;
+			sourceTree = "<group>";
+		};
 		9069042A2BEE84F3008DF1C2 = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +260,8 @@
 				9069048D2BF09E96008DF1C2 /* Managers */,
 				906904442BEE88A0008DF1C2 /* BaseApp */,
 				906904452BEE88C0008DF1C2 /* Onboarding */,
-				906904862BEFFB07008DF1C2 /* AfterBoarding */,
+				906904862BEFFB07008DF1C2 /* AccountSetup */,
+				902C71532BF134E50023D93C /* HomeScreens */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -327,12 +364,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		906904862BEFFB07008DF1C2 /* AfterBoarding */ = {
+		906904862BEFFB07008DF1C2 /* AccountSetup */ = {
 			isa = PBXGroup;
 			children = (
-				906904872BEFFB21008DF1C2 /* HomeScreen */,
+				906904902BF107B7008DF1C2 /* ParentAccountSetup */,
 			);
-			path = AfterBoarding;
+			path = AccountSetup;
 			sourceTree = "<group>";
 		};
 		906904872BEFFB21008DF1C2 /* HomeScreen */ = {
@@ -357,6 +394,31 @@
 				9069048A2BF0052E008DF1C2 /* AppRoot */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		906904902BF107B7008DF1C2 /* ParentAccountSetup */ = {
+			isa = PBXGroup;
+			children = (
+				906904912BF107CC008DF1C2 /* ParentAccountSetupFirstStep */,
+				902C714F2BF118510023D93C /* ParentAccountSetupFinalStep */,
+			);
+			path = ParentAccountSetup;
+			sourceTree = "<group>";
+		};
+		906904912BF107CC008DF1C2 /* ParentAccountSetupFirstStep */ = {
+			isa = PBXGroup;
+			children = (
+				906904922BF107EB008DF1C2 /* View */,
+			);
+			path = ParentAccountSetupFirstStep;
+			sourceTree = "<group>";
+		};
+		906904922BF107EB008DF1C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				906904832BEFEF4F008DF1C2 /* MAINavigationStack.swift in Sources */,
+				902C71522BF118760023D93C /* ParentAccountSetupFinalStepView.swift in Sources */,
 				906904682BEF8005008DF1C2 /* Font+Extension.swift in Sources */,
 				9069046A2BEF8B29008DF1C2 /* Color+Extension.swift in Sources */,
 				906904892BEFFB2E008DF1C2 /* HomeScreenView.swift in Sources */,
@@ -445,6 +508,7 @@
 				906904732BEFA8F1008DF1C2 /* DeviceOwnerViewModel.swift in Sources */,
 				906904852BEFF18E008DF1C2 /* MAITextField.swift in Sources */,
 				906904792BEFBA88008DF1C2 /* ParentLoginView.swift in Sources */,
+				906904942BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift in Sources */,
 				9069047D2BEFE7F4008DF1C2 /* TutorialCarouselView.swift in Sources */,
 				906904772BEFB1BA008DF1C2 /* MAIButton.swift in Sources */,
 				906904582BEEA179008DF1C2 /* AppConstants.swift in Sources */,

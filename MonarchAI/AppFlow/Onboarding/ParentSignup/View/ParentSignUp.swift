@@ -108,7 +108,9 @@ struct ParentSignUp: View {
                     }
                     .padding(.bottom, 15)
                     
-                }, navigationTitle: "Sign up"
+                }, 
+            navigationTitle: "Sign up",
+            navigationBarBackgroundEnable: true
             
         )
         .overlay(content: {
@@ -130,7 +132,7 @@ struct ParentSignUp: View {
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
             self.showProgressView = false
-            appRootManager.currentRoot = .home
+            appRootManager.currentRoot = .accountSetup
         }
     }
 }

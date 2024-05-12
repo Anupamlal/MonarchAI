@@ -84,7 +84,9 @@ struct ParentLoginView: View {
                     
                     Spacer()
                     
-                }, navigationTitle: "Log in"
+                },
+            navigationTitle: "Log in",
+            navigationBarBackgroundEnable: true
             
         )
         .overlay(content: {
@@ -106,7 +108,7 @@ struct ParentLoginView: View {
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
             self.showProgressView = false
-            appRootManager.currentRoot = .home
+            appRootManager.currentRoot = .accountSetup
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MAINavigationButton<Destination: View>: View {
     
     var buttonTitle: String
-    var backgroundEnable: Bool
+    var backgroundEnable: Bool = true
     var destination: Destination
 
     init(buttonTitle: String, backgroundEnable: Bool, destination: Destination) {

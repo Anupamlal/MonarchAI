@@ -23,6 +23,9 @@ struct MonarchAIApp: App {
                 case .authentication:
                     DeviceOwnerView()
                     
+                case .accountSetup:
+                    ParentAccountSetupFirstStepView()
+                    
                 case .home:
                     HomeScreenView()
                 }
