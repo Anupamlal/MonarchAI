@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "keep_ur_child_safe_online.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
