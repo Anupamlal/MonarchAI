@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		902C71522BF118760023D93C /* ParentAccountSetupFinalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */; };
+		902C71572BF135910023D93C /* AddChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C71562BF135910023D93C /* AddChildView.swift */; };
 		906904372BEE84F3008DF1C2 /* MonarchAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904362BEE84F3008DF1C2 /* MonarchAIApp.swift */; };
 		9069043B2BEE84F6008DF1C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9069043A2BEE84F6008DF1C2 /* Assets.xcassets */; };
 		9069043E2BEE84F6008DF1C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9069043D2BEE84F6008DF1C2 /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAccountSetupFinalStepView.swift; sourceTree = "<group>"; };
+		902C71562BF135910023D93C /* AddChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildView.swift; sourceTree = "<group>"; };
 		906904332BEE84F3008DF1C2 /* MonarchAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonarchAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		906904362BEE84F3008DF1C2 /* MonarchAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonarchAIApp.swift; sourceTree = "<group>"; };
 		9069043A2BEE84F6008DF1C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,8 +111,17 @@
 		902C71542BF135530023D93C /* AddChild */ = {
 			isa = PBXGroup;
 			children = (
+				902C71552BF135840023D93C /* View */,
 			);
 			path = AddChild;
+			sourceTree = "<group>";
+		};
+		902C71552BF135840023D93C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				902C71562BF135910023D93C /* AddChildView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9069042A2BEE84F3008DF1C2 = {
@@ -511,6 +522,7 @@
 				906904942BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift in Sources */,
 				9069047D2BEFE7F4008DF1C2 /* TutorialCarouselView.swift in Sources */,
 				906904772BEFB1BA008DF1C2 /* MAIButton.swift in Sources */,
+				902C71572BF135910023D93C /* AddChildView.swift in Sources */,
 				906904582BEEA179008DF1C2 /* AppConstants.swift in Sources */,
 				906904502BEE89F1008DF1C2 /* SplashView.swift in Sources */,
 				9069048F2BF0A075008DF1C2 /* MAISocialLoginButton.swift in Sources */,

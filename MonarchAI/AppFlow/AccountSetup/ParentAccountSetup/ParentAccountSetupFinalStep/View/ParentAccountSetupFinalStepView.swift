@@ -20,7 +20,7 @@ struct ParentAccountSetupFinalStepView: View {
                     
                     Spacer()
                     
-                    MAINavigationButton(buttonTitle: "Done", backgroundEnable: true, destination: HomeScreenView())
+                    MAINavigationButton(buttonTitle: "Done", backgroundEnable: true, destination: AddChildView())
                         .padding(.all, 30)
                         .padding(.bottom, 60)
                 },
