@@ -74,7 +74,7 @@ struct TutorialView: View {
                             .foregroundColor(.appThemeColor())
                     }
                 }
-                .padding(.bottom, 15)
+                .padding(.bottom, 30)
                 
             }
             .navigationBarHidden(true)

@@ -12,28 +12,39 @@ struct MAINavigationStack<Root:View> : View {
     
     var sourceView: Root
     var navigationTitle: String
-    var navigationBarBackgroundEnable: Bool = false
     
     @Environment(\.dismiss) private var dismiss
     
     init(sourceView: Root, navigationTitle: String) {
         self.sourceView = sourceView
         self.navigationTitle = navigationTitle
+        removeBottomBorder()
     }
     
-    init(sourceView: Root, navigationTitle: String, navigationBarBackgroundEnable: Bool) {
-        self.sourceView = sourceView
-        self.navigationTitle = navigationTitle
-        self.navigationBarBackgroundEnable = navigationBarBackgroundEnable
+    func removeBottomBorder() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowColor = .clear
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
+    
+    @State private var interactivePopGestureRecognizer: UIScreenEdgePanGestureRecognizer = {
+        let gesture = UIScreenEdgePanGestureRecognizer()
+        gesture.name = UUID().uuidString
+        gesture.edges = UIRectEdge.left
+        gesture.isEnabled = true
+        return gesture
+    }()
     
     var body: some View {
         NavigationStack {
             sourceView
+                .background {
+                    AttachPopGestureView(gesture: $interactivePopGestureRecognizer)
+                }
         }
-        .toolbarBackground(Color.white, for: .navigationBar)
-        .toolbarBackground(navigationBarBackgroundEnable ? .visible : .hidden, for: .navigationBar)
-        .background(Color.white)
         .navigationTitle(Text(navigationTitle))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)

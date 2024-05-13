@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902B1CEA2BF286DA00AD49DD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902B1CE92BF286DA00AD49DD /* View+Extension.swift */; };
 		902C71522BF118760023D93C /* ParentAccountSetupFinalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */; };
 		902C71572BF135910023D93C /* AddChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C71562BF135910023D93C /* AddChildView.swift */; };
 		906904372BEE84F3008DF1C2 /* MonarchAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904362BEE84F3008DF1C2 /* MonarchAIApp.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		902B1CE92BF286DA00AD49DD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		902C71512BF118760023D93C /* ParentAccountSetupFinalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAccountSetupFinalStepView.swift; sourceTree = "<group>"; };
 		902C71562BF135910023D93C /* AddChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildView.swift; sourceTree = "<group>"; };
 		906904332BEE84F3008DF1C2 /* MonarchAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonarchAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +285,7 @@
 				906904572BEEA179008DF1C2 /* AppConstants.swift */,
 				906904672BEF8005008DF1C2 /* Font+Extension.swift */,
 				906904692BEF8B29008DF1C2 /* Color+Extension.swift */,
+				902B1CE92BF286DA00AD49DD /* View+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				9069045D2BEF7DD0008DF1C2 /* DeviceOwnerView.swift in Sources */,
 				9069046D2BEF908D008DF1C2 /* TutorialView.swift in Sources */,
 				9069048C2BF00544008DF1C2 /* AppRootManager.swift in Sources */,
+				902B1CEA2BF286DA00AD49DD /* View+Extension.swift in Sources */,
 				906904732BEFA8F1008DF1C2 /* DeviceOwnerViewModel.swift in Sources */,
 				906904852BEFF18E008DF1C2 /* MAITextField.swift in Sources */,
 				906904792BEFBA88008DF1C2 /* ParentLoginView.swift in Sources */,

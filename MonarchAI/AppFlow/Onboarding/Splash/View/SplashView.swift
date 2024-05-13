@@ -34,7 +34,7 @@ struct SplashView: View {
     func startTimerAndGoToDeviceOwnerView() {
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
             self.splashViewModel.isApiHitGoingOn = false
-            self.appRootManager.currentRoot = .authentication
+            self.appRootManager.currentRoot = .deviceOwnerTypeSelection
         }
     }
     

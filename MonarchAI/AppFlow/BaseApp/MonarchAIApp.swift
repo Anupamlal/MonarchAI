@@ -20,14 +20,17 @@ struct MonarchAIApp: App {
                 case .splash:
                     SplashView()
                     
-                case .authentication:
+                case .deviceOwnerTypeSelection:
                     DeviceOwnerView()
+                    
+                case .tutorialAndOnboarding(let deviceOwnerType):
+                    TutorialView(deviceOwnerType: deviceOwnerType)
                     
                 case .accountSetup:
                     ParentAccountSetupFirstStepView()
                     
                 case .home:
-                    HomeScreenView()
+                    HomeScreenView()                
                 }
             }
             .environmentObject(appRootManager)

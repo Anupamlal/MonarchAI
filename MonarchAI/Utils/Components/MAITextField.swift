@@ -13,6 +13,7 @@ struct MAITextField: View {
     var placeholder:String
     var imageName: String?
     var keyboardType:UIKeyboardType?
+    var onEditingChanged: ((Bool) -> Void)?
     
     var body: some View {
         HStack {
@@ -20,13 +21,17 @@ struct MAITextField: View {
             if let imageName = imageName {
                 Image(imageName)
             }
-            TextField(placeholder, text: $textFieldBinding)
-                .controlSize(.large)
-                .font(.regularFont(ofSize: 16))
-                .tint(.appThemeColor())
-                .keyboardType(keyboardType == nil ? .default : .emailAddress)
-                .submitLabel(.done)
-                
+            
+            TextField(placeholder, text: $textFieldBinding) { status in
+                if let onEditingChanged = onEditingChanged{
+                    onEditingChanged(status)
+                }
+            }
+            .font(.regularFont(ofSize: 16))
+            .tint(.appThemeColor())
+            .keyboardType(keyboardType == nil ? .default : keyboardType!)
+            .submitLabel(.done)
+            
         }
         .padding()
         .frame(height: 56)

@@ -14,6 +14,7 @@ struct ParentSignUp: View {
     @State var confirmPasswordTextField: String = ""
     @State var showProgressView: Bool = false
     @EnvironmentObject private var appRootManager: AppRootManager
+    @FocusState var focusState:FocusStateOnBoarding?
     
     var body: some View {
         
@@ -31,9 +32,13 @@ struct ParentSignUp: View {
                     .padding(.horizontal, 30)
                     
                     
-                    MAITextField(textFieldBinding: $emailTextField, placeholder: "Email")
+                    MAITextField(textFieldBinding: $emailTextField, placeholder: "Email", keyboardType: .emailAddress)
                         .padding(.horizontal, 30)
                         .padding(.top, 20)
+                        .focused($focusState, equals: .email)
+                        .onTapGesture {
+                            focusState = .email
+                        }
                     
                     SecureField("Password", text: $passwordTextField)
                         .tint(.appThemeColor())
@@ -46,6 +51,10 @@ struct ParentSignUp: View {
                         }
                         .padding(.horizontal, 30)
                         .padding(.top, 20)
+                        .focused($focusState, equals: .password)
+                        .onTapGesture {
+                            focusState = .password
+                        }
                     
                     SecureField("Confirm Password", text: $confirmPasswordTextField)
                         .tint(.appThemeColor())
@@ -58,6 +67,10 @@ struct ParentSignUp: View {
                         }
                         .padding(.horizontal, 30)
                         .padding(.top, 20)
+                        .focused($focusState, equals: .confirmPassword)
+                        .onTapGesture {
+                            focusState = .confirmPassword
+                        }
                     
                     MAIButton(buttonTitle: "Get started", backgroundEnable: true) {
                         proceedWithLogin()
@@ -106,11 +119,10 @@ struct ParentSignUp: View {
                                 .foregroundColor(.appThemeColor())
                         }
                     }
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 30)
                     
                 }, 
-            navigationTitle: "Sign up",
-            navigationBarBackgroundEnable: true
+            navigationTitle: "Sign up"
             
         )
         .overlay(content: {

@@ -13,7 +13,8 @@ final class AppRootManager: ObservableObject {
     
     enum eAppRoots {
         case splash
-        case authentication
+        case deviceOwnerTypeSelection
+        case tutorialAndOnboarding(DeviceOwnerType)
         case accountSetup
         case home
     }

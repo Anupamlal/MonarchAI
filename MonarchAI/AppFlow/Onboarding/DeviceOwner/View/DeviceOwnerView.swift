@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DeviceOwnerView: View {
     
-    @EnvironmentObject private var appRootManager: AppRootManager
-    
     var body: some View {
         NavigationStack{
             VStack {
@@ -27,8 +25,6 @@ struct DeviceOwnerView: View {
                 Spacer()
             }
         }
-        
-        
     }
 }
 
@@ -37,11 +33,15 @@ struct DeviceSelectorView: View {
     var deviceOwnerType: DeviceOwnerType
     var deviceOwnerViewModel = DeviceOwnerViewModel()
     
+    @EnvironmentObject private var appRootManager: AppRootManager
+    
     var body: some View {
         
-        NavigationLink {
+        Button {
             
-            TutorialView(deviceOwnerType: deviceOwnerType)
+            withAnimation(.snappy) {
+                self.appRootManager.currentRoot = .tutorialAndOnboarding(deviceOwnerType)
+            }
             
         } label: {
             RoundedRectangle(cornerRadius: 8)

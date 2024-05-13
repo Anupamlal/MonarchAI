@@ -7,12 +7,20 @@
 
 import SwiftUI
 
+enum FocusStateOnBoarding {
+    case none
+    case email
+    case password
+    case confirmPassword
+}
+
 struct ParentLoginView: View {
-        
+    
     @State var emailTextField: String = ""
     @State var passwordTextField: String = ""
     @State var showProgressView: Bool = false
     @EnvironmentObject private var appRootManager: AppRootManager
+    @FocusState var focusState:FocusStateOnBoarding?
     
     var body: some View {
         
@@ -33,9 +41,13 @@ struct ParentLoginView: View {
                     .padding(.top, 60)
                     .padding(.horizontal, 30)
                     
-                    MAITextField(textFieldBinding: $emailTextField, placeholder: "Email")
-                        .padding(.horizontal, 30)
-                        .padding(.top, 20)
+                    MAITextField(textFieldBinding: $emailTextField, placeholder: "Email", keyboardType: .emailAddress)
+                    .padding(.horizontal, 30)
+                    .padding(.top, 20)
+                    .focused($focusState, equals: .email)
+                    .onTapGesture {
+                        focusState = .email
+                    }
                     
                     SecureField("Password", text: $passwordTextField)
                         .tint(.appThemeColor())
@@ -48,6 +60,10 @@ struct ParentLoginView: View {
                         }
                         .padding(.horizontal, 30)
                         .padding(.top, 20)
+                        .focused($focusState, equals: .password)
+                        .onTapGesture {
+                            focusState = .password
+                        }
                     
                     MAIButton(buttonTitle: "Get started", backgroundEnable: true) {
                         proceedWithLogin()
@@ -85,9 +101,7 @@ struct ParentLoginView: View {
                     Spacer()
                     
                 },
-            navigationTitle: "Log in",
-            navigationBarBackgroundEnable: true
-            
+            navigationTitle: "Log in"            
         )
         .overlay(content: {
             if self.showProgressView {

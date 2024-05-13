@@ -12,6 +12,15 @@ struct AddChildView: View {
     @State var childNameField: String = ""
     @State var childGenderField: String = ""
     @State var childDOBField: String = ""
+    @State var childDOBDate = Date()
+    @State private var isDatePickerVisible = false
+    @State private var isChildDOBPresent = false
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
     
     var body: some View {
         MAINavigationStack(
@@ -33,19 +42,52 @@ struct AddChildView: View {
                     
                     MAITextField(textFieldBinding: $childNameField, placeholder: "Name")
                         .padding(.all, 30)
+                        
                     
                     HStack(spacing: 20) {
                         MAITextField(textFieldBinding: $childGenderField, placeholder: "Gender")
-                            
-                        MAITextField(textFieldBinding: $childDOBField, placeholder: "DD/MM/YYYY")
+                        
+                        Group {
+                            if isChildDOBPresent {
+                                Text(childDOBField)
+                            }else {
+                                Text("DD/MM/YYYY")
+                                    .foregroundStyle(Color.gray)
+                            }
+                        }
+                        .font(.regularFont(ofSize: 16))
+                        .padding()
+                        .frame(height: 56)
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(lineWidth: 1.0)
+                                .foregroundStyle(Color.strokeColor())
+                        }
+                        .onTapGesture {
+                            isDatePickerVisible.toggle()
+                        }
+                        
                     }
                     .padding(.horizontal, 30)
+                    
+                    if isDatePickerVisible {
+                        DatePicker("", selection: $childDOBDate, in: ...Date.now, displayedComponents: .date)
+                            .datePickerStyle(.wheel)
+                            .labelsHidden()
+                            .onChange(of: childDOBDate, perform: { value in
+                                isChildDOBPresent = true
+                                childDOBField = value.formatted(date: .numeric, time: .omitted)
+                            })
+                    }
                     
                     MAINavigationButton(buttonTitle: "Add", backgroundEnable: true, destination: HomeScreenView())
                         .padding(.all, 30)
                         .padding(.bottom, 60)
                     
                     Spacer()
+                }
+                .onTapGesture {
+                    isDatePickerVisible = false
                 },
             navigationTitle: "Add a child"
         )
