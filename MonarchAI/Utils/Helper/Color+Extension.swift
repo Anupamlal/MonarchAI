@@ -44,4 +44,8 @@ extension Color {
     static func socialMediaButtonShadowColor() -> Color {
         return .init(uiColor:  UIColor(red: 129/255, green: 129/255, blue: 129/255, alpha: 0.25))
     }
+    
+    static func childDPBorderColor() -> Color {
+        return .init(uiColor:  UIColor(red: 179/255, green: 179/255, blue: 179/255, alpha: 0.25))
+    }
 }

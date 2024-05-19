@@ -37,6 +37,8 @@
 		9069048C2BF00544008DF1C2 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069048B2BF00544008DF1C2 /* AppRootManager.swift */; };
 		9069048F2BF0A075008DF1C2 /* MAISocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069048E2BF0A075008DF1C2 /* MAISocialLoginButton.swift */; };
 		906904942BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */; };
+		90AD00052BF8F76400172AB2 /* MAIMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AD00042BF8F76400172AB2 /* MAIMenuView.swift */; };
+		90AD00082BFA7A2200172AB2 /* MAIPhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AD00072BFA7A2200172AB2 /* MAIPhotoPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		9069048B2BF00544008DF1C2 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		9069048E2BF0A075008DF1C2 /* MAISocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAISocialLoginButton.swift; sourceTree = "<group>"; };
 		906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAccountSetupFirstStepView.swift; sourceTree = "<group>"; };
+		90AD00042BF8F76400172AB2 /* MAIMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAIMenuView.swift; sourceTree = "<group>"; };
+		90AD00072BFA7A2200172AB2 /* MAIPhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAIPhotoPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +348,7 @@
 		906904742BEFB17C008DF1C2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				90AD00062BFA7A0000172AB2 /* AdapterScreens */,
 				906904752BEFB18C008DF1C2 /* Components */,
 				906904552BEE8DF5008DF1C2 /* Helper */,
 			);
@@ -358,6 +363,7 @@
 				906904822BEFEF4F008DF1C2 /* MAINavigationStack.swift */,
 				906904842BEFF18E008DF1C2 /* MAITextField.swift */,
 				9069048E2BF0A075008DF1C2 /* MAISocialLoginButton.swift */,
+				90AD00042BF8F76400172AB2 /* MAIMenuView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -433,6 +439,14 @@
 				906904932BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		90AD00062BFA7A0000172AB2 /* AdapterScreens */ = {
+			isa = PBXGroup;
+			children = (
+				90AD00072BFA7A2200172AB2 /* MAIPhotoPickerView.swift */,
+			);
+			path = AdapterScreens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,12 +540,14 @@
 				906904942BF107FC008DF1C2 /* ParentAccountSetupFirstStepView.swift in Sources */,
 				9069047D2BEFE7F4008DF1C2 /* TutorialCarouselView.swift in Sources */,
 				906904772BEFB1BA008DF1C2 /* MAIButton.swift in Sources */,
+				90AD00082BFA7A2200172AB2 /* MAIPhotoPickerView.swift in Sources */,
 				902C71572BF135910023D93C /* AddChildView.swift in Sources */,
 				906904582BEEA179008DF1C2 /* AppConstants.swift in Sources */,
 				906904502BEE89F1008DF1C2 /* SplashView.swift in Sources */,
 				9069048F2BF0A075008DF1C2 /* MAISocialLoginButton.swift in Sources */,
 				906904702BEF9D00008DF1C2 /* TutorialViewModel.swift in Sources */,
 				906904812BEFEB44008DF1C2 /* ParentSignUp.swift in Sources */,
+				90AD00052BF8F76400172AB2 /* MAIMenuView.swift in Sources */,
 				9069045A2BEEA319008DF1C2 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +688,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MonarchAI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Monarch AI needs to access camera to capture the image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -712,6 +729,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MonarchAI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Monarch AI needs to access camera to capture the image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
